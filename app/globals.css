@@ -1,26 +1,48 @@
-@import "tailwindcss";
+:root{
+  --bg:#0b1020;--fg:#e6eefb;--muted:#a9b3c7;--card:#111733;--accent:#5da0ff;--border:#263256;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  color:var(--fg);
+  background: radial-gradient(1200px 600px at 10% -10%, #1a2250 10%, var(--bg) 60%);
+}
+.container{max-width:960px;margin:48px auto;padding:0 20px}
+h1{font-size:2rem;margin:0 0 8px}
+.tagline{color:var(--muted);margin:0 0 24px}
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+
+.counter{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px;
+  box-shadow:0 6px 18px rgba(0,0,0,.25);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.count{font-size:3rem;font-weight:700;text-align:center;padding:8px 0 12px}
+.controls{display:flex;gap:12px;justify-content:center;margin:12px 0 16px}
+
+button{
+  appearance:none;border:1px solid var(--border);
+  background:#1a2350;color:var(--fg);
+  padding:10px 14px;border-radius:12px;font-size:1rem;cursor:pointer;
+}
+button:hover{filter:brightness(1.15)}
+button:disabled{cursor:not-allowed;filter:none;opacity:.5}
+
+.step{display:grid;gap:6px;justify-items:center}
+.step label{color:var(--muted)}
+.step input{
+  width:120px;padding:8px 10px;border-radius:10px;border:1px solid var(--border);
+  background:#0f1533;color:var(--fg);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* screen-reader only */
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
 }

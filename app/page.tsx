@@ -4,7 +4,7 @@ export default function HomePage() {
   return (
     <main className="container">
       <h1>Button Counter</h1>
-      <p className="tagline">Reusable component with state, props, and a11y.</p>
+      <p className="tagline">Add, subtract & have fun!</p>
 
       <div className="grid">
         <section>
